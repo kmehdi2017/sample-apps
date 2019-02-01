@@ -1,0 +1,31 @@
+﻿
+<head>
+<style type="text/css">
+.blotter {
+	text-align: center;
+	color: #800000;
+}
+</style>
+</head>
+
+{% extends "layout.html" %} {% block content %} 
+<div align="center">
+<h1 class="blotter">Blotter</h1>
+<h3>Trading history with relevant information </h3>
+</div>
+<div align="center">
+    
+{{data | safe}}
+</div>
+<div align="center">
+<p><p>
+	<div align="center">
+		<img alt="logo" src="{{ url_for('static', filename = 'coinlogo.png') }}">
+		
+
+	</div>
+ 
+</div>
+
+{% endblock %}
+

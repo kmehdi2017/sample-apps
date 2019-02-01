@@ -1,0 +1,51 @@
+﻿
+<head>
+<style type="text/css">
+.lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+.lblsym {
+            color: #800000;
+            font-size: large;
+
+        }
+ 
+</style>
+</head>
+
+{% extends "layout.html" %}
+
+{% block content %}
+  
+  
+	
+	<div align="center">
+	<label class="lblmsg">{{msg}}</label><br>
+	    <span style="width:600px">
+	    <p >
+		This is a DEMO project done in python that would be used to trade cryptocurrencies as well as predict alternative future prices offered by multiple machine learning algorithms. 
+		This sample web-based trading system will take orders to buy or sell 
+		cryptocurrency based on user selection. Users can see the current bid or 
+		ask price, predicted price (next seven days) of the selected currency, generate chart and graphics to see 
+		market status with 100 day trading history and get statistics for 24 
+		hour trading data. User can see his/her own previous trading activities 
+		(blotter) and the trade status of specific currencies, 
+		inventory/position, profit or loss by selecting appropriate tools. Users 
+		also can see the time-series charts for various trading data. </p>
+	    
+		<label class="lblsym">The scope, limitations and assumptions:</strong></strong></label><br>The project is limited to the USDT market in the BITTREX exchange for currency and price information. The historical data is collected from cryptocompare.com through their API. crytocompare.com was selected since it collects information from several exchanges and was assumed to provide a better insight of a currency's trading information and market status.
+
+		<br><br>USDT was selected as the base price. The difference between USDT and true USD was ignored and no conversion was made. In this project USDT was assumed to be exactly equal to USD and all the values were treated that way. 
+
+		<br><br>The application uses mongoDB to store and retrieve all trading information. This mongoDB is hosted in the cloud (mongoDB Atlas ).</span><p></p>
+ <br><br>
+		<img alt="logo" src="{{ url_for('static', filename = 'coinlogo.png') }}">
+		
+
+	</div>
+ 
+
+{% endblock %}
+

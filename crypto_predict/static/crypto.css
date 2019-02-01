@@ -1,0 +1,259 @@
+﻿.button {
+	border-radius: 5px;
+	background-color: #4CAF50; /* Green */;
+	border: none;
+	color: white;
+	padding: 10px 60px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.buttonTrade {background-color: #008CBA;} 
+.buttonPL {background-color:olive;}  
+.buttonSubmit {background-color:#CC3300;               
+               padding:8px 40px} 
+.buttonStat {background-color:#009900;               
+               padding:8px 40px}
+               
+ 
+
+ 
+.lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+.lblsym {
+            color: #800000;
+            font-size: large;
+
+        }
+ 
+ /* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+} 
+
+.tradeInfo {
+    background:none; 
+    border:none; 
+    color:darkolivegreen; 
+    font-size:x-large;
+
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+table.tradeTbl {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 60%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.tradeTbl td, table.tradeTbl th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.tradeTbl tbody td {
+  font-size: 13px;
+  color: #000000;
+}
+table.tradeTbl tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.tradeTbl thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.tradeTbl thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+table.tradeTbl thead th:first-child {
+  border-left: none;
+}
+
+table.tradeTbl tfoot {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #156DB9;
+  background: -moz-linear-gradient(top, #4f91ca 0%, #2c7bc0 66%, #156DB9 100%);
+  background: -webkit-linear-gradient(top, #4f91ca 0%, #2c7bc0 66%, #156DB9 100%);
+  background: linear-gradient(to bottom, #4f91ca 0%, #2c7bc0 66%, #156DB9 100%);
+  border-top: 2px solid #444444;
+}
+table.tradeTbl tfoot td {
+  font-size: 10px;
+}
+table.tradeTbl tfoot .links {
+  text-align: right;
+}
+table.tradeTbl tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+
+table.statTable {
+  border: 2px solid #FFFFFF;
+  width: 700px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.statTable td, table.statTable th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 4px;
+  text-align:left;
+  font-weight:bold;
+}
+table.statTable tbody td {
+  font-size: 13px;
+}
+table.statTable td:nth-child(even) {
+  background: #EBEBEB;
+}
+table.statTable thead {
+  background: #FFFFFF;
+  border-bottom: 4px solid #333333;
+}
+table.statTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #992817;
+  text-align: center;
+  border-left: 2px solid #333333;
+}
+table.statTable thead th:first-child {
+  border-left: none;
+}
+
+table.statTable tfoot {
+  font-size: 10px;
+  font-weight: normal;
+  border-top: 4px solid #333333;
+}
+table.statTable tfoot td {
+  font-size: 10px;
+}
+
+

@@ -1,0 +1,133 @@
+﻿
+<head>
+<style type="text/css">
+.pl {
+	text-align: center;
+	color: #800000;
+}
+
+
+
+ /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width : 60%;
+
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+</head>
+
+{% extends "layout.html" %} {% block content %} 
+<div align="center">
+<h1 class="pl">P/L</h1>
+<h3>(Current status of each traded currencies and the associated profit or loss) </h3><br></div>
+<div align="center">
+{{data | safe}}
+</div>
+<div align="center">
+<br><br>    
+  <h3 style="color:green; text-decoration: underline;"> Time series charts of PL items </h3>
+ <div class="tab">
+ 
+  <button class="tablinks" onclick="openChart(event, 'PortPL')" id="default">Portfolio PL</button>
+  <button class="tablinks" onclick="openChart(event, 'cash')">Executed price and cash postion</button>
+  <button class="tablinks" onclick="openChart(event, 'wap')">VWAP</button>
+</div>
+
+<!-- Tab content -->
+<div id="PortPL" class="tabcontent">
+   
+     {% if plot_url != None %}
+          <img src="{{ plgraph }}" id="imgpl">
+      {% endif %}       
+</div>
+
+<div id="cash" class="tabcontent">
+  {% if plot_url != None %}
+      <img src="{{ price_cashgraph}}" id="imgcash">
+   {% endif %}
+
+</div>
+
+<div id="wap" class="tabcontent">
+  {% if plot_url != None %}
+      <img src="{{ wapgraph}}" id="imgwap">
+   {% endif %}
+</div>
+
+<script>
+document.getElementById("default").click();
+function openChart(evt, chart) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(chart).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+    
+
+</div>
+
+
+<div align="center">
+<p><p><br> <br>
+
+	<div align="center">
+		<img alt="logo" src="{{ url_for('static', filename = 'coinlogo.png') }}">
+		
+
+	</div>
+ 
+</div>
+
+{% endblock %}

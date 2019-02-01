@@ -1,0 +1,9 @@
+pymongo
+Flask
+requests
+matplotlib
+pandas
+statsmodels
+keras
+sklearn
+tensorflow==1.5

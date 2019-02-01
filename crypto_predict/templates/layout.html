@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Latest compiled and minified CSS -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='crypto.css')}}">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<title>Mehdi Khan's crypto trade</title>
+<style type="text/css">
+.lblassign {
+	text-align: center;
+	font-size:larger;
+	text-decoration:underline;
+}
+
+.div2 {
+    width: 699px;
+    overflow: hidden;    
+}
+p {
+    margin-bottom: 1em;
+}
+input.right {
+    float: right;
+}
+
+.button3 {	background-color: #003300;    		 
+    			border: none;
+    			color: white;
+   				padding: 5px 10px;
+    			text-align: center;
+    			text-decoration: none;
+    			display: inline-block;
+    			font-size: 16px;
+    			margin: 4px 2px;
+    			cursor: pointer;
+    		}
+    		
+ .buttonreset {	background-color:#FF3300;    		 
+    			border: none;
+    			color: white;
+   				padding: 5px 10px;
+    			text-align: center;
+    			text-decoration: none;
+    			display: inline-block;
+    			font-size: 16px;
+    			margin: 4px 2px;
+    			cursor: pointer;
+    		}
+
+</style>
+</head>
+
+<body>
+<div align="center">
+	<img alt="Background" height="269" src="../static/coin3A.png" width="700" />
+	<div class="div2"><a href="/" class="button3" style="float:right;" role="button">Return to Main</a>
+	<a href="/reset" class="buttonreset" style="float:left;" role="button">Reset Account</a>
+	</div>
+	 
+	<br/><br/>
+	<a href="/trade" class="button buttonTrade" role="button">Trade</a>
+  	<a href="/blotter" class="button" role="button">View Blotter</a>
+ 	<a href="/pl" class="button buttonPL" role="button">View P/L</a><br/><br/>
+	
+<div align="center">
+
+	{% block content %}{% endblock %}
+	</div>
+</div>
+</body>
+
+</html>

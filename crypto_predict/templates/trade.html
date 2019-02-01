@@ -1,0 +1,128 @@
+﻿
+
+
+<head>
+     <style type="text/css">
+        .lbl {
+            color: #088B08;
+            font-size: medium;
+        }
+
+        .lblprice {
+            color:#aa4a12;
+            font-size:x-large
+        }
+        .lbl2 {
+            font-size: medium;
+        }
+       .lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+	   .lblsym  {
+            color: #800000;
+            font-size: large;
+
+        }
+ 
+
+        
+      </style>
+      
+  </head>
+
+
+        {% extends "layout.html" %} {% block content %}
+
+
+
+        <div align="center"  >
+
+        <form action="/submitTrade" method="POST">
+        <label class="lblsym" ><strong>Enter a symbol:</strong>&nbsp;</label><input type="text" id="symbol" list="symlist" name="symbol" ><br>
+            <datalist id="symlist" >
+                {% for ticker in tickerlist %}
+                <option value={{ticker}}>
+                    {% endfor %}
+            </datalist>
+          <br>
+         <span style="width:330px;><label class="lbl"><strong>Select a Trading option:</strong></label>
+            <input type="radio" id="radio" checked="checked" name="side" value="B" >
+            <label class="lbl2">Buy</label>
+            <input type="radio" id="radio2" name="side" value="S">
+            <label class="lbl2" >Sell</label>
+         </span><br>
+
+         <p></p>
+            <!--a href="/plot" class="button buttonTrade" role="button">View Market Status</a-->
+            <input type="submit" value="View Current Data and Prediction" class="button buttonStat" name="trade" ><br>
+            <label>...it may take some time to predict price...</label><br>            
+
+            <p></p>
+            
+    	 		
+  		
+           <span style="width:450px">
+                    {% if currentSymbol != None %}
+                    <label class="lblsym" style="color:black;">{{lblsymbol}}</label><label class="lblmsg">{{currentSymbol}}</label>
+                        <input type="hidden" name="currency" value="{{currentSymbol}}" /><br/>
+                   {% endif %}
+
+                   {% if side != None %}
+                    &nbsp;&nbsp;<label class="lblsym" style="color:black;">{{lblside}}</label><label class="lblmsg" style="color:darkblue;">{{tradeopt}}</label>
+                        <input type="hidden" name="opt" class="tradeInfo" value="{{side}}" /><br/>
+                   {% endif %}
+
+                   {% if lblprice != None %}
+                    &nbsp;&nbsp;<label class="lblsym" style="color:black;">{{lblprice}}</label><label class="lblmsg" style="color:darkgreen;">{{price}}</label>
+                        <!--nput name="tradingprice"  type="hidden" value="{{price}}" /-->
+                   {% endif %}
+             </span>
+		
+         <br>
+		<div align="center" > 
+		 {% if predicted != None %}
+                    <label class="lblsym" style="color:green">{{predictprice}}</label>
+                    <label class="lblmsg">{{dockerError}}</label>
+                    {{predicted| safe}}
+                        
+           {% endif %}
+ 
+          
+		</div>
+
+
+
+            
+            
+            
+               
+            
+           
+            <div><br>
+                <label class="lblsym"><strong>Enter a quantity:</strong> </label>
+                <!--label class="lblsym">&nbsp;&nbsp;Quantity:&nbsp; </label--><input type="number" name="quantity"><br>
+                <br>
+                <input type="submit" value="Execute Trade" name="trade" class="button buttonSubmit">
+            </div>
+            <div align="center">
+             <br /><br />
+                <label id="lblMsg" class="lblmsg">{{msg}}</label>
+                <label style="font-size:large;font-weight:bold">{{txtStat}}</label>
+                <br />
+                {{stat|safe}}
+                <br />
+                <label style="font-size:large;font-weight:bold">{{txtStat2}}</label>     
+ 			</div>
+            <div align="center">
+                {% if plot_url != None %}
+                <img src="{{ plot_url }}" id="analysis">
+                {% endif %}
+            </div>
+          </form>
+         </div>
+
+        {% endblock %}
+
+
