@@ -1,0 +1,12 @@
+name: data_viz_shiny
+title: data_viz_shiny
+username:
+account: kmehdi2017
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 678514
+bundleId: 1847442
+url: https://kmehdi2017.shinyapps.io/data_viz_shiny/
+when: 1548909719.1975
+asMultiple: FALSE
+asStatic: FALSE
