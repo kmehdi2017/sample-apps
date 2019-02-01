@@ -1,0 +1,12 @@
+name: visualize_mortality_data
+title: visualize_mortality_data
+username:
+account: kmehdi2017
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 678528
+bundleId: 1847452
+url: https://kmehdi2017.shinyapps.io/visualize_mortality_data/
+when: 1548910691.88201
+asMultiple: FALSE
+asStatic: FALSE
